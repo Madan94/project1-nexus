@@ -1,0 +1,220 @@
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Overall Sizing */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height:100vh;
+    background:#222;
+}
+
+@property --a{
+    syntax:'<angle>';
+    inherits:false;
+    initial-value: 0deg;
+}
+
+.box{
+    position:relative;
+    width:400px;
+    min-height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:repeating-conic-gradient(from var(--a),#01dbc2 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation:animate 6s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        --a:0deg;
+    }
+    100%{
+        --a:360deg;
+    }
+}
+
+.box::before{
+    height:100%;
+    width:100%;
+    content:'';
+    position:absolute;
+    background:repeating-conic-gradient(from var(--a),#01dbc2 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation:animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.box::after{
+    content:'';
+    position:absolute;
+    inset:2px;
+    border:20px solid #222;
+    background: #303030;
+}
+
+.form1{
+    position:relative;
+    z-index:1000;
+}
+
+
+form h2{
+    color:#fff;
+    font-weight:600;
+    margin-bottom:30px;
+    padding-top:60px;
+    text-align:center;
+    width:100%;
+    text-transform: uppercase;
+}
+
+.inputBx{
+    margin-bottom:5px;
+    position:relative;
+    width:240px;
+}
+
+.inputBx span{
+    inset:-2px;
+    position:absolute;
+    background: #f00;
+    z-index:1;
+}
+
+.inputBx span::before{
+    inset:-2px;
+    content:'';
+    position:absolute;
+    background:repeating-conic-gradient(from var(--a),#01dbc2 0%,#01dbc2 10%,transparent 10%, transparent 50%);
+    animation:animate 6s linear infinite;
+    box-shadow:0 0 0 2px #000;
+
+}
+
+.inputBx:nth-child(2) span::before{
+    animation-delay:-1.5s;
+}
+
+.inputBx span::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:#292929;
+}
+
+.inputBx input{
+    position:relative;
+    z-index:100000;
+    outline:none;
+    border:none;
+    width:100%;
+    padding:8px 14px;
+    background:transparent;
+    color:#fff;
+    
+}
+
+.inputBx input::placeholder{
+    color:#fff;
+    opacity:50;
+    background: transparent;
+    
+}
+
+.inputBx input[type="submit"]{
+    background:#01dbc2;
+    cursor:pointer;
+    font-weight:700;
+    box-shadow:0 0 0 4px #01dbc2;
+    width:100%;
+    color:#292929;
+    filter:drop-shadow(0 0 15px #01dbc2);
+    margin-bottom:15px;
+}
+
+.group{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding-top:-10px;
+    padding-bottom:10px;
+    position:relative;
+}
+
+.group a{
+    text-decoration:none;
+    color:#fff8;
+    
+}
+
+.group a:nth-child(2),
+.group a:hover{
+    color:#01dbc2;
+    filter:drop-shadow(0 0 4px #01dbc2);
+}
+
+.login-text{
+    padding-top:15px;
+    color:#01dbc2;
+}
+
+.group1{
+    padding-bottom:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    color:#01dbc2;
+}
+
+p{
+    padding-top:10px;
+}
+
+
+.icons{
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+    margin-top:20px;
+}
+
+i{
+    font-size:25px;
+}
+
+i:hover{
+    color:#01dbc2;
+    filter:drop-shadow(0 0 7px #01dbc2);
+}
+
+.errorMsg{
+    margin-bottom:30px;
+    color:orangered;
+}
+
+.form2{
+    position:relative;
+    z-index:1000;
+    display:none;
+}
+
+.form-hidden{
+    display:none;
+}
+
+.form-unhidden{
+    display:block;
+}
